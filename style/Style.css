@@ -1,0 +1,34 @@
+
+    #customer{
+        position: relative;
+        top: 10vh;
+        width: 100vw;
+        height: 90vh;
+    }
+
+    .form{
+        position: relative;
+        left: 0;
+        width: 40vw;
+        height: 70vh;
+        background: white;
+        border-radius: 10px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .form-input>input{
+        width: 38vw;
+    }
+
+    .form-input{
+        width: 38vw;
+    }
+
+    .form-button{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
