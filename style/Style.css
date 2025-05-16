@@ -39,10 +39,11 @@
 
     .table{
         /*position: absolute;*/
-        width: 63vw;
+        width: 62vw;
         right: 0;
         border-radius: 10px;
-        margin-top:3vh ;
+        margin-top:1.5vh ;
 
 
     }
+
