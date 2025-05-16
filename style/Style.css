@@ -2,33 +2,47 @@
     #customer{
         position: relative;
         top: 10vh;
-        width: 100vw;
+        /*width: 100vw;*/
         height: 90vh;
+
+        display: grid;
+        grid-template-columns: repeat(2 ,2fr);
     }
 
     .form{
-        position: relative;
-        left: 0;
-        width: 40vw;
+        /*position: absolute;*/
+        top: 3vh;
+        width: 35vw;
         height: 70vh;
         background: white;
         border-radius: 10px;
         display: grid;
         align-items: center;
         justify-content: center;
+        margin-top:3vh ;
 
     }
 
     .form-input>input{
-        width: 38vw;
+        width: 33vw;
     }
 
     .form-input{
-        width: 38vw;
+        width: 33vw;
     }
 
     .form-button{
         display: flex;
         align-items: center;
         justify-content: space-around;
+    }
+
+    #table{
+        /*position: absolute;*/
+        width: 63vw;
+        right: 0;
+        border-radius: 10px;
+        margin-top:3vh ;
+
+
     }
