@@ -47,3 +47,11 @@
 
     }
 
+    .payment{
+        display: flex;
+        justify-content: space-around;
+    }
+    .invoice{
+        width: 30vw;
+        height: 40vh;
+    }
