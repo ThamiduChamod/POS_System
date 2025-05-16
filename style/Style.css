@@ -1,5 +1,5 @@
 
-    #customer{
+    .page{
         position: relative;
         top: 10vh;
         /*width: 100vw;*/
@@ -37,7 +37,7 @@
         justify-content: space-around;
     }
 
-    #table{
+    .table{
         /*position: absolute;*/
         width: 63vw;
         right: 0;
