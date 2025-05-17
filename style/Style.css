@@ -54,4 +54,8 @@
     .invoice{
         width: 30vw;
         height: 40vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
