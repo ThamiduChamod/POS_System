@@ -1,12 +1,16 @@
 
     .page{
-        position: relative;
+        position: absolute;
         top: 10vh;
         /*width: 100vw;*/
         height: 90vh;
 
         display: grid;
         grid-template-columns: repeat(2 ,2fr);
+    }
+    .page>:first-child{
+
+        width: 35vw;
     }
 
     .form{
@@ -40,17 +44,33 @@
     .table{
         /*position: absolute;*/
         width: 62vw;
-        right: 0;
+        top: 0;
+
         border-radius: 10px;
         margin-top:1.5vh ;
+        margin-right: 1vw;
 
 
     }
 
     .payment{
+        width: 100vw;
+        height: 50vh;
+        display: grid;
+        grid-template-rows: repeat(2,2fr);
+    }
+
+    .invoices{
+        /*background: violet;*/
+        position: absolute;
+        top: 10vh;
+        width: 100vw;
+        height: 40vh;
         display: flex;
         justify-content: space-around;
+        grid-template-rows: repeat(2,1fr);
     }
+
     .invoice{
         width: 30vw;
         height: 40vh;
@@ -58,4 +78,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        /*border: 1px solid firebrick;*/
     }
+
+    .payment{
+        /*position: relative;*/
+
+    }
+
+

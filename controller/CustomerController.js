@@ -33,13 +33,33 @@ import CustomerModel from "../model/CustomerModel.js";
 
         if (id === ''|| name === ''|| address === ''|| phone === ''){
             error_alert();
-            console.log("empty");
+            // console.log("empty");
         }else {
             let customer_data = new CustomerModel(id,name,address,phone);
             Customer_db.push(customer_data);
             done_alert();
             clear();
-            console.log(Customer_db);
+            loadCustomer();
+            // console.log(Customer_db);
         }
-       console.log(id)
+       // console.log(id)
     });
+
+    function loadCustomer() {
+        $('#customer-table-tbody').empty();
+        Customer_db.map((item, index) =>{
+           let id = item.id;
+           let name = item.name;
+           let address = item.address;
+           let phone = item.phone;
+
+           let  data =
+               `<tr>
+                    <td>${id}</td>
+                    <td>${name}</td>
+                    <td>${address}</td>
+                    <td>${phone}</td>
+                </tr>`
+            $('#customer-table-tbody').append(data);
+        });
+    }
