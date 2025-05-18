@@ -21,5 +21,16 @@ function getAllCustomer() {
     });
 }
 
+function getAllItem() {
+    let select = $("#itemIds"); // jQuery object
+    Item_db.forEach(function (item) {
+        let option = `
+            <option>${item.id}</option>
+       `
+        console.log(item.id);
+        select.append(option);
+    });
+}
+
 
 
