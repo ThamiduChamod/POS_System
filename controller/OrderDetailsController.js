@@ -5,14 +5,14 @@ import CustomerModel from "../model/CustomerModel.js";
 
 
 $('#order-btn').on('click', function (){
-    getAllCustomer();
-    getAllItem();
+    getAllCustomerId();
+    getAllItemId();
     loadCustomerData($('#customerIds').val());
-    console.log("vvv")
+    loadItemData($('#itemIds').val());
 });
 
-function getAllCustomer() {
-    let select = $("#customerIds"); // jQuery object
+function getAllCustomerId() {
+    let select = $("#customerIds").empty(); // jQuery object
     Customer_db.forEach(function (customer) {
        let option = `
             <option value="${customer.id}">${customer.id}</option>
@@ -22,8 +22,8 @@ function getAllCustomer() {
     });
 }
 
-function getAllItem() {
-    let select = $("#itemIds"); // jQuery object
+function getAllItemId() {
+    let select = $("#itemIds").empty(); // jQuery object
     Item_db.forEach(function (item) {
         let option = `
             <option value="${item.id}">${item.id}</option>
@@ -47,6 +47,23 @@ function loadCustomerData(id) {
            $('#customerPhone').val(customer.phone);
 
        }
+    });
+}
+
+$('#itemIds').on('change', function () {
+    const val = $('#itemIds').val();
+    loadItemData(val);
+});
+
+function loadItemData(id) {
+
+    Item_db.forEach(function (item) {
+        if (item.id === id){
+            $('#itemName').val(item.name);
+            $('#itemQTY').val(item.QTY);
+            $('#itemUnitPrice').val(item.unit_price);
+
+        }
     });
 }
 
