@@ -156,12 +156,12 @@
                     <form class="row gy-2 gx-3 align-items-center">
 
                         <div class="col-auto">
-                            <label class="visually-hidden" for="customerId">Preference</label>
-                            <select class="form-select" id="customerId">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <label class="visually-hidden" for="customerIds">Preference</label>
+                            <select class="form-select" id="customerIds">
+<!--                                <option selected>Choose...</option>-->
+<!--                                <option value="1">One</option>-->
+<!--                                <option value="2">Two</option>-->
+<!--                                <option value="3">Three</option>-->
                             </select>
                         </div>
                         <div class="col-auto">
@@ -184,11 +184,11 @@
 
                         <div class="col-auto">
                             <label class="visually-hidden" for="itemId">Preference</label>
-                            <select class="form-select" id="itemId">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select class="form-select" id="itemIds">
+<!--                                <option selected>Choose...</option>-->
+<!--                                <option value="1">One</option>-->
+<!--                                <option value="2">Two</option>-->
+<!--                                <option value="3">Three</option>-->
                             </select>
                         </div>
                         <div class="col-auto">
@@ -252,6 +252,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderDetailsController.js"></script>
 <script>
     window.addEventListener("load", function () {
         $('#customer-page').css("display","block");

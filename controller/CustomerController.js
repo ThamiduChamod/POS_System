@@ -40,7 +40,7 @@ import CustomerModel from "../model/CustomerModel.js";
             done_alert();
             clear();
             loadCustomer();
-            // console.log(Customer_db);
+            console.log(Customer_db);
         }
        // console.log(id)
     });
