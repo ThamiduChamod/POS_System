@@ -6,7 +6,8 @@ import CustomerModel from "../model/CustomerModel.js";
 
 $('#order-btn').on('click', function (){
     getAllCustomer();
-    getAllItem()
+    getAllItem();
+    loadCustomerData($('#customerIds').val());
     console.log("vvv")
 });
 
@@ -29,6 +30,23 @@ function getAllItem() {
        `
         console.log(item.id);
         select.append(option);
+    });
+}
+
+$('#customerIds').on('change', function () {
+    const val = $('#customerIds').val();
+    loadCustomerData(val);
+});
+
+function loadCustomerData(id) {
+
+    Customer_db.forEach(function (customer) {
+       if (customer.id === id){
+           $('#customerName').val(customer.name);
+           $('#customerAddress').val(customer.address);
+           $('#customerPhone').val(customer.phone);
+
+       }
     });
 }
 
