@@ -14,7 +14,7 @@ function getAllCustomer() {
     let select = $("#customerIds"); // jQuery object
     Customer_db.forEach(function (customer) {
        let option = `
-            <option>${customer.id}</option>
+            <option value="${customer.id}">${customer.id}</option>
        `
         console.log(customer.id);
         select.append(option);
@@ -25,7 +25,7 @@ function getAllItem() {
     let select = $("#itemIds"); // jQuery object
     Item_db.forEach(function (item) {
         let option = `
-            <option>${item.id}</option>
+            <option value="${item.id}">${item.id}</option>
        `
         console.log(item.id);
         select.append(option);
