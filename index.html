@@ -153,34 +153,38 @@
     <div class="payment">
         <div class="invoices">
                 <div class="invoice">
-                    <form class="row gy-2 gx-3 align-items-center">
-
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="customerIds">Preference</label>
-                            <select class="form-select" id="customerIds">
-<!--                                <option selected>Choose...</option>-->
-<!--                                <option value="1">One</option>-->
-<!--                                <option value="2">Two</option>-->
-<!--                                <option value="3">Three</option>-->
-                            </select>
-                        </div>
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="customerName">Name</label>
-                            <input type="text" class="form-control" id="customerName" placeholder="Jane Doe">
-                        </div>
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="customerAddress">Address</label>
-                            <input type="text" class="form-control" id="customerAddress" placeholder="Colombo">
-                        </div>
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="customerPhone">Phone</label>
-                            <input type="text" class="form-control" id="customerPhone" placeholder="077-xxxxxxx">
-                        </div>
-                    </form>
+                    <label>Select Customer</label>
+                    <div>
+                        <form class="row gy-2 gx-3 align-items-center">
+                            <div class="col-auto">
+                                <label class="visually-hidden" for="customerIds">Preference</label>
+                                <select class="form-select" id="customerIds">
+    <!--                                <option selected>Choose...</option>-->
+    <!--                                <option value="1">One</option>-->
+    <!--                                <option value="2">Two</option>-->
+    <!--                                <option value="3">Three</option>-->
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <label class="visually-hidden" for="customerName">Name</label>
+                                <input type="text" class="form-control" id="customerName" placeholder="Jane Doe">
+                            </div>
+                            <div class="col-auto">
+                                <label class="visually-hidden" for="customerAddress">Address</label>
+                                <input type="text" class="form-control" id="customerAddress" placeholder="Colombo">
+                            </div>
+                            <div class="col-auto">
+                                <label class="visually-hidden" for="customerPhone">Phone</label>
+                                <input type="text" class="form-control" id="customerPhone" placeholder="077-xxxxxxx">
+                            </div>
+                        </form>
+                    </div>
             </div>
 
             <div class="invoice">
-                <form class="row gy-2 gx-3 align-items-center">
+                <label>Select Items</label>
+                <div>
+                    <form class="row gy-2 gx-3 align-items-center">
 
                         <div class="col-auto">
                             <label class="visually-hidden" for="itemIds">Preference</label>
@@ -204,30 +208,33 @@
                             <input type="text" class="form-control" id="itemUnitPrice" placeholder="077-xxxxxxx">
                         </div>
                     </form>
+                </div>
             </div>
 
             <div class="invoice">
-                <form class="row-1 gy-2 gx-3 align-items-center">
-                    <div class="col-auto">
-                        <label class="visually-hidden" for="orderId">Name</label>
-                        <input type="text" class="form-control" id="orderId" placeholder="Jane Doe">
-                    </div>
-                    <div class="col-auto">
-                        <label class="visually" for="orderId">Total</label>
-                        <label class="visually" for="orderId">0.00rs</label>
-                    </div>
-                    <div class="col-auto">
-                        <label class="visually-hidden" for="cash">Name</label>
-                        <input type="text" class="form-control" id="cash" placeholder="Jane Doe">
-                    </div>
-                    <div class="col-auto">
-                        <label class="visually-hidden" for="balance">Name</label>
-                        <input type="text" class="form-control" id="balance" placeholder="Jane Doe">
-                    </div>
+                <label>Place Order</label>
+                <div>
+                    <form class="row-1 gy-2 gx-3 align-items-center">
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="orderId">Name</label>
+                            <input type="text" class="form-control" id="orderId" placeholder="Jane Doe">
+                        </div>
+                        <div class="col-auto">
+                            <label class="visually" for="orderId">Total</label>
+                            <label class="visually" for="orderId">0.00rs</label>
+                        </div>
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="cash">Name</label>
+                            <input type="text" class="form-control" id="cash" placeholder="Jane Doe">
+                        </div>
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="balance">Name</label>
+                            <input type="text" class="form-control" id="balance" placeholder="Jane Doe">
+                        </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
-
         </div>
         <div>
             <table class="table table-bordered">
@@ -237,6 +244,7 @@
                         <th>Item Name</th>
                         <th>Unit Price</th>
                         <th>QTY</th>
+                        <th>Total Price</th>
                     </tr>
                 </thead>
                 <tbody>

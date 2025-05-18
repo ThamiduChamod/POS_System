@@ -79,10 +79,23 @@
         width: 30vw;
         height: 40vh;
         background: white;
-        display: flex;
+        display: grid;
         justify-content: center;
         align-items: center;
+        border-radius: 20px;
         /*border: 1px solid firebrick;*/
+    }
+    .invoice>label{
+        color: #0d6efd;
+        border: 2px solid #0d6efd;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .invoice>div{
+        width: 25vw;
+        height: 30vh;
+        /*border: 1px solid darkblue;*/
     }
 
     .payment>:nth-child(2)>table{
