@@ -181,6 +181,18 @@ $('#addToCart-btn').on('click' , function () {
         $('#QTY').val('');
 
     });
+    
+
+    $('#cash').on('input', function () {
+        let  sub_total = $('#total-price-label').text();
+        let cash = $('#cash').val();
+
+        $('#balance').text(cash-sub_total);
+
+    });
+
+
+
 
 
 
