@@ -63,3 +63,7 @@ import CustomerModel from "../model/CustomerModel.js";
             $('#customer-table-tbody').append(data);
         });
     }
+
+    $('#customer-clear-btn').on('click',function () {
+        clear();
+    });
