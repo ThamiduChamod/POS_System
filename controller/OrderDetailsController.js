@@ -94,7 +94,7 @@ $('#addToCart-btn').on('click' , function () {
                 <td>${$('#itemName').val()}</td>
                 <td>${price}</td>
                 <td class="qty">${qty}</td>
-                <td>${total}</td>
+                <td class="total">${total}</td>
                 <td>
                     <button type="button" class="btn btn-danger cart-remove-btn">Remove</button>
                 </td>
@@ -142,11 +142,16 @@ $('#addToCart-btn').on('click' , function () {
     }
 
     let select_row;
+    let unit_price;
+    let old_total;
     $('#cart-table-tbody').on('click','tr', function () {
         $('.invoice-from :input').prop('disabled', true);
         $('#addToCart-btn').prop('disabled',true );
         $('#place-order-btn').prop('disabled',true );
+
         let qty = $(this).closest('tr').find('td:eq(3)').text();
+        unit_price = $(this).closest('tr').find('td:eq(2)').text();
+        old_total = $(this).closest('tr').find('td:eq(4)').text();
         $('#QTY').val(qty);
         select_row = $(this);
 
@@ -157,7 +162,15 @@ $('#addToCart-btn').on('click' , function () {
         $('.invoice-from :input').prop('disabled', false);
         $('#addToCart-btn').prop('disabled',false );
         $('#place-order-btn').prop('disabled',false );
-        select_row.find('.qty').text($('#QTY').val());
+        let  new_qty = $('#QTY').val();
+        let new_total = new_qty*unit_price;
+        select_row.find('.qty').text(new_qty);
+        select_row.find('.total').text(new_total);
+
+        let cart_total = parseFloat($('#total-price-label').text());
+        $('#total-price-label').text((cart_total-old_total)+new_total);
+        $('#QTY').val('');
+
     });
 
 
