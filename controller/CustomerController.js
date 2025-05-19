@@ -6,7 +6,6 @@ function nextId() {
     i+=1
     let nextId = "C00"+i;
     $('#customer-id-text').val(nextId);
-    console.log(nextId);
 }
 window.addEventListener("load", function (){nextId();});
 
