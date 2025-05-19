@@ -3,6 +3,15 @@ import OrderDetailsModel from "../model/OrderDetailsModel.js";
 import ItemModel from "../model/ItemModel.js";
 import CustomerModel from "../model/CustomerModel.js";
 
+function error_alert() {
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Add QTY!",
+        // footer: '<a href="#">Why do I have this issue?</a>'
+    });
+}
+
 
 $('#order-btn').on('click', function (){
     getAllCustomerId();
@@ -66,6 +75,57 @@ function loadItemData(id) {
         }
     });
 }
+
+$('#addToCart-btn').on('click' , function () {
+    let qty = $('#QTY').val();
+
+    if (qty === ''){
+        error_alert();
+    }else {
+        let price = $('#itemUnitPrice').val();
+        let total = qty*price;
+
+
+        let cart_data =
+            `<tr>
+                <td>${$('#itemIds').val()}</td>
+                <td>${$('#itemName').val()}</td>
+                <td>${price}</td>
+                <td>${qty}</td>
+                <td>${total}</td>
+                <td>
+                    <button type="button" class="btn btn-danger cart-remove-btn">Remove</button>
+                </td>
+            </tr>`
+        $('#cart-table-tbody').append(cart_data);
+
+        let total_label = parseFloat($('#total-price-label').text());
+
+        if (isNaN(total_label)) {
+            $('#total-price-label').text(total); // First value
+        } else {
+            let update = total_label +total;
+            $('#total-price-label').text(update);
+        }
+
+
+
+    }
+});
+
+    $(document).on('click', '.cart-remove-btn', function () {
+        let total = $(this).closest('tr').find('td:eq(4)').text();
+        let label_value =parseFloat($('#total-price-label').text());
+        let update =  label_value - total ;
+        $('#total-price-label').text(update);
+        console.log(total);
+        $(this).closest('tr').remove();
+
+
+    });
+
+
+
 
 
 
