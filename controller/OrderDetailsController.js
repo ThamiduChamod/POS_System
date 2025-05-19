@@ -124,6 +124,19 @@ $('#addToCart-btn').on('click' , function () {
 
     });
 
+    $('#cart-clear-btn').on('click', function () {
+        console.log("aaa")
+        clear();
+    });
+
+    function clear() {
+        $('#QTY').val('');
+        $('#cash').val('');
+        $('#balance').text(0.00);
+    }
+
+
+
 
 
 
