@@ -1,5 +1,5 @@
 import ItemModel from "../model/ItemModel.js";
-import {Item_db} from "../db/db.js";
+import {Customer_db, Item_db} from "../db/db.js";
 
 let i=0;
 function nextId() {
@@ -118,9 +118,51 @@ function clear() {
     });
 
     $('#item-delete-btn').on('click', function () {
-       Item_db.splice(select_item_index , 1);
-
-       clear();
-       loadItem();
+       // Item_db.splice(select_item_index , 1);
+        delete_alert();
+       // clear();
+       // loadItem();
     });
+
+    function delete_alert() {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Item_db.splice(select_item_index , 1);
+            swalWithBootstrapButtons.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
+            clear();
+            loadItem();
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelled",
+                text: "Your imaginary file is safe :)",
+                icon: "error"
+            });
+            clear();
+            loadItem();
+        }
+    });
+
+}
 
