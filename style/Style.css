@@ -52,11 +52,19 @@
 
 
     }
+    .main-payment{
+        position: relative;
+        top: 10vh;
+        height: 90vh;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+    }
 
     .payment{
         position: relative;
-        top: 10vh;
-        /*width: 100vw;*/
+        /*top: 10vh;*/
+        width: 65vw;
         height: 90vh;
         display: grid;
         grid-template-rows: repeat(2,1fr);
@@ -100,15 +108,29 @@
 
     .payment>:nth-child(2)>table{
         position: relative;
+        width: 64vw;
 
+    }
+    .place-order{
+        position: relative;
+        top: 1vh;
+        height: 87vh;
+        grid-template-rows: repeat(5 ,1fr);
+
+    }
+    .place-order>div>form>div{
+        margin-top: 2vh;
     }
 
     .order-label{
         display: flex;
         align-items: center;
     }
-    .order-label>:first-child{
-        width: 6vw;
+    /*.order-label>:first-child{*/
+    /*    width: 6vw;*/
+    /*}*/
+    .place-order>div>form>div>label{
+            width: 6vw;
     }
 
     .qty-cart{
@@ -119,6 +141,11 @@
         width: 15vw;
         margin-right: 2vw;
     }
+    .cash-section{
+        margin-top: 2vh;
+
+
+    }
     .cash-section>div{
         display: flex;
         align-items: center;
@@ -126,5 +153,10 @@
     .cash-section>div>input{
         width: 15vw;
     }
+
+    .cart-btn{
+        width: 25vw;
+    }
+
 
 
