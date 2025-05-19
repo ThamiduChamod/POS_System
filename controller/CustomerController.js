@@ -1,6 +1,13 @@
 import {Customer_db} from "../db/db.js";
 import CustomerModel from "../model/CustomerModel.js";
 
+    $('#customer-btn').on('click' , function () {
+       $('#customer-update-btn').prop('disabled',true);
+       $('#customer-delete-btn').prop('disabled' , true);
+       $('#customer-save-btn').prop("disabled", false);
+
+    });
+
 
     function error_alert() {
         Swal.fire({
@@ -23,6 +30,11 @@ import CustomerModel from "../model/CustomerModel.js";
         $('#customer-name-text').val('');
         $('#customer-address-text').val('');
         $('#customer-phone-text').val('');
+
+        $('#customer-save-btn').prop("disabled", false);
+        $('#customer-update-btn').prop('disabled',true);
+        $('#customer-delete-btn').prop('disabled' , true);
+
     }
 
     $('#customer-save-btn').on('click' , function () {
@@ -65,5 +77,34 @@ import CustomerModel from "../model/CustomerModel.js";
     }
 
     $('#customer-clear-btn').on('click',function () {
+        clear();
+
+    });
+
+    let select_customer;
+    $('#customer-table-tbody').on('click','tr', function () {
+        console.log($(this).index());
+        select_customer = Customer_db[$(this).index()];
+
+        $('#customer-id-text').val(select_customer.id);
+        $('#customer-name-text').val(select_customer.name);
+        $('#customer-address-text').val(select_customer.address);
+        $('#customer-phone-text').val(select_customer.phone);
+
+        $('#customer-save-btn').prop("disabled", true);
+        $('#customer-update-btn').prop('disabled',false);
+        $('#customer-delete-btn').prop('disabled' , false);
+    });
+
+    $('#customer-update-btn').on('click' , function () {
+        // let customer = Customer_db[select_customer];
+
+        select_customer.id = $('#customer-id-text').val();
+        select_customer.name = $('#customer-name-text').val();
+        select_customer.address = $('#customer-address-text').val();
+        select_customer.phone = $('#customer-phone-text').val();
+
+
+        loadCustomer();
         clear();
     });

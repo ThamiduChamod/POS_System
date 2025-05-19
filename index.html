@@ -69,7 +69,7 @@
                 </div>
                 <div class="  form-button">
                     <button type="button" class="btn btn-danger" id="customer-delete-btn">Delete</button>
-                    <button type="button" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-primary" id="customer-update-btn">Update</button>
                     <button type="button" class="btn btn-secondary" id="customer-clear-btn">Clear</button>
                     <button type="button" class="btn btn-success" id="customer-save-btn">Save</button>
 
@@ -273,6 +273,10 @@
         $('#customer-page').css("display","block");
         $('#item-page').css("display","none");
         $('#order-page').css("display","none");
+
+        $('#customer-update-btn').prop('disabled',true);
+        $('#customer-delete-btn').prop('disabled' , true);
+        $('#customer-save-btn').prop("disabled", false);
     });
     $("#customer-btn").on('click' ,function () {
         console.log("aaa")
