@@ -77,41 +77,42 @@ function loadItemData(id) {
 }
 
 $('#addToCart-btn').on('click' , function () {
-    let qty = $('#QTY').val();
+    addToCart();
+});
+    function addToCart() {
+        let qty = $('#QTY').val();
+        if (qty === ''){
+            error_alert();
+        }else {
+            let price = $('#itemUnitPrice').val();
+            let total = qty*price;
 
-    if (qty === ''){
-        error_alert();
-    }else {
-        let price = $('#itemUnitPrice').val();
-        let total = qty*price;
 
-
-        let cart_data =
-            `<tr>
+            let cart_data =
+                `<tr>
                 <td>${$('#itemIds').val()}</td>
                 <td>${$('#itemName').val()}</td>
                 <td>${price}</td>
-                <td>${qty}</td>
+                <td class="qty">${qty}</td>
                 <td>${total}</td>
                 <td>
                     <button type="button" class="btn btn-danger cart-remove-btn">Remove</button>
                 </td>
             </tr>`
-        $('#cart-table-tbody').append(cart_data);
+            $('#cart-table-tbody').append(cart_data);
 
-        let total_label = parseFloat($('#total-price-label').text());
+            let total_label = parseFloat($('#total-price-label').text());
 
-        if (isNaN(total_label)) {
-            $('#total-price-label').text(total); // First value
-        } else {
-            let update = total_label +total;
-            $('#total-price-label').text(update);
+            if (isNaN(total_label)) {
+                $('#total-price-label').text(total); // First value
+            } else {
+                let update = total_label +total;
+                $('#total-price-label').text(update);
+            }
+
+            $('#QTY').val('');
         }
-
-
-
     }
-});
 
     $(document).on('click', '.cart-remove-btn', function () {
         let total = $(this).closest('tr').find('td:eq(4)').text();
@@ -133,7 +134,31 @@ $('#addToCart-btn').on('click' , function () {
         $('#QTY').val('');
         $('#cash').val('');
         $('#balance').text(0.00);
+        $('.invoice-from :input').prop('disabled', false);
+        $('#addToCart-btn').prop('disabled',false );
+        $('#place-order-btn').prop('disabled',false );
+
+
     }
+
+    let select_row;
+    $('#cart-table-tbody').on('click','tr', function () {
+        $('.invoice-from :input').prop('disabled', true);
+        $('#addToCart-btn').prop('disabled',true );
+        $('#place-order-btn').prop('disabled',true );
+        let qty = $(this).closest('tr').find('td:eq(3)').text();
+        $('#QTY').val(qty);
+        select_row = $(this);
+
+
+    });
+
+    $('#cart-update-btn').on('click' , function () {
+        $('.invoice-from :input').prop('disabled', false);
+        $('#addToCart-btn').prop('disabled',false );
+        $('#place-order-btn').prop('disabled',false );
+        select_row.find('.qty').text($('#QTY').val());
+    });
 
 
 
