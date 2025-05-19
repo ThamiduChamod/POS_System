@@ -1,6 +1,15 @@
 import {Customer_db} from "../db/db.js";
 import CustomerModel from "../model/CustomerModel.js";
 
+let i=0;
+function nextId() {
+    i+=1
+    let nextId = "C00"+i;
+    $('#customer-id-text').val(nextId);
+    console.log(nextId);
+}
+window.addEventListener("load", function (){nextId();});
+
     $('#customer-btn').on('click' , function () {
        $('#customer-update-btn').prop('disabled',true);
        $('#customer-delete-btn').prop('disabled' , true);
@@ -52,6 +61,7 @@ import CustomerModel from "../model/CustomerModel.js";
             done_alert();
             clear();
             loadCustomer();
+            nextId();
             console.log(Customer_db);
         }
        // console.log(id)

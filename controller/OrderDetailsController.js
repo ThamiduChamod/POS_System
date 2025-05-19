@@ -3,6 +3,15 @@ import OrderDetailsModel from "../model/OrderDetailsModel.js";
 import ItemModel from "../model/ItemModel.js";
 import CustomerModel from "../model/CustomerModel.js";
 
+let i=0;
+function nextId() {
+    i+=1
+    let nextId = "O00"+i;
+    $('#order-id-label').text(nextId);
+    console.log(nextId);
+}
+window.addEventListener("load", function (){nextId();});
+
 function error_alert() {
     Swal.fire({
         icon: "error",

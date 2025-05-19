@@ -1,11 +1,22 @@
 import ItemModel from "../model/ItemModel.js";
 import {Item_db} from "../db/db.js";
 
+let i=0;
+function nextId() {
+    i+=1
+    let nextId = "I00"+i;
+    $('#item-code-text').val(nextId);
+    console.log(nextId);
+}
+window.addEventListener("load", function (){nextId();});
+
 
 $('#item-btn').on('click', function (){
     $('#item-save-btn').prop('disabled',false);
     $('#item-update-btn').prop('disabled',true);
     $('#item-delete-btn').prop('disabled',true);
+
+
 });
 
 function error_alert() {
@@ -50,6 +61,7 @@ function clear() {
             done_alert();
             clear();
             loadItem();
+            nextId();
 
         }
 
