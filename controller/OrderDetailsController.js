@@ -191,6 +191,24 @@ $('#addToCart-btn').on('click' , function () {
 
     });
 
+$('#QTY').on('input', function () {
+    let total = parseFloat($('#itemQTY').val()) || 0;
+    let qty = parseFloat($(this).val()) || 0;
+
+    let label = $('#qty-info-label');
+
+    if (qty >= total+1) {
+        label.removeClass('visually-hidden');
+        label.css('font-size', '0.8rem');
+        label.text("Please enter an amount lower than: " + total);
+        $('#addToCart-btn').prop('disabled',true);
+    } else {
+        label.addClass('visually-hidden');
+        label.text('.');
+        $('#addToCart-btn').prop('disabled',false);
+    }
+});
+
 
 
 
