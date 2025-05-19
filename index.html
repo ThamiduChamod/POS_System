@@ -215,21 +215,28 @@
                 <label>Place Order</label>
                 <div>
                     <form class="row-1 gy-2 gx-3 align-items-center">
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="orderId">Name</label>
-                            <input type="text" class="form-control" id="orderId" placeholder="Jane Doe">
+                        <div class="col-auto order-label">
+                            <label  class="form-label ">OrderId</label>
+                            <label  class="form-label ">O001</label>
+<!--                            <label class="from-label" id="orderId">O001</label>-->
+<!--                            <input type="text" class="form-control" id="orderId" placeholder="Order ID">-->
                         </div>
-                        <div class="col-auto">
-                            <label class="visually" for="orderId">Total</label>
-                            <label class="visually" for="orderId">0.00rs</label>
+                        <div class="col-auto order-label">
+                            <label class="visually form-label" >Total price</label>
+                            <label class="visually form-label" >0.00rs</label>
                         </div>
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="cash">Name</label>
-                            <input type="text" class="form-control" id="cash" placeholder="Jane Doe">
+                        <div class="col-auto qty-cart">
+                            <label class="visually-hidden" for="QTY">Name</label>
+                            <input type="text" class="form-control" id="QTY" placeholder="Enter QTY">
+                            <button type="button" class="btn btn-success" id="addToCart">Add To Cart</button>
                         </div>
-                        <div class="col-auto">
-                            <label class="visually-hidden" for="balance">Name</label>
-                            <input type="text" class="form-control" id="balance" placeholder="Jane Doe">
+                        <div class="col-auto cash-section">
+                            <label class="visually form-label" for="cash">Cash</label>
+                            <div>
+                                <input type="text" class="form-control" id="cash" placeholder="Jane Doe">
+                                <label class="visually form-label" >Balance</label>
+                                <label class="visually form-label" >0.00</label>
+                            </div>
                         </div>
 
                     </form>

@@ -103,4 +103,28 @@
 
     }
 
+    .order-label{
+        display: flex;
+        align-items: center;
+    }
+    .order-label>:first-child{
+        width: 6vw;
+    }
+
+    .qty-cart{
+        display: flex;
+        align-items: center;
+    }
+    .qty-cart>input{
+        width: 15vw;
+        margin-right: 2vw;
+    }
+    .cash-section>div{
+        display: flex;
+        align-items: center;
+    }
+    .cash-section>div>input{
+        width: 15vw;
+    }
+
 
