@@ -82,8 +82,10 @@ import CustomerModel from "../model/CustomerModel.js";
     });
 
     let select_customer;
+    let select_customer_index;
     $('#customer-table-tbody').on('click','tr', function () {
         console.log($(this).index());
+        select_customer_index = $(this).index();
         select_customer = Customer_db[$(this).index()];
 
         $('#customer-id-text').val(select_customer.id);
@@ -107,4 +109,11 @@ import CustomerModel from "../model/CustomerModel.js";
 
         loadCustomer();
         clear();
+    });
+
+    $('#customer-delete-btn').on('click', function () {
+        Customer_db.splice(select_customer_index, 1);
+
+       loadCustomer();
+       clear();
     });
