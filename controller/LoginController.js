@@ -109,22 +109,24 @@ import LogInModel from "../model/LogInModel.js";
     $('#login-btn').on('click', function () {
         let email = $('#login-email-text').val();
         let password = $('#login-password-text').val();
-        console.log("11111")
-
+        let  is_correct = false;
 
         Log_in_db.forEach( function (account){
            if (account.email === email){
                if (account.password === password){
                     login();
+                    is_correct=true;
                }
            }
         });
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Incorrect email or password!",
-            // footer: '<button class="register-btn">Create Account?</button>'
-        });
+        if (!is_correct) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Incorrect email or password!",
+                // footer: '<button class="register-btn">Create Account?</button>'
+            });
+        }
     });
 
 $('#login-email-text').on('input', function () {
