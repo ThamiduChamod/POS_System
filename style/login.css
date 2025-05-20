@@ -7,6 +7,8 @@
     /*    font-family: "Open Sans", sans-serif;*/
     /*}*/
 
+
+
     .account-section{
         display: flex;
         align-items: center;
@@ -51,6 +53,7 @@
         position: relative;
         border-bottom: 2px solid #ccc;
         margin: 15px 0;
+
     }
 
     .input-field label {

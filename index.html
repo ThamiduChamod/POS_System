@@ -36,11 +36,11 @@
         <form action="#" class="forms">
             <h2 class="account-h2">Login</h2>
             <div class="input-field">
-                <input type="text" required>
+                <input type="text" id="login-email-text" required>
                 <label>Enter your email</label>
             </div>
             <div class="input-field">
-                <input type="password" required>
+                <input type="password" id="login-password-text" required>
                 <label>Enter your password</label>
             </div>
             <div class="forget">
@@ -67,26 +67,30 @@
             <form action="#" class="forms">
                 <h2 class="account-h2">Create Account</h2>
                 <div class="input-field">
-                    <input type="text" required>
+                    <input type="text" id="account-name-text" required>
                     <label>Enter your name</label>
                 </div>
-                <div class="input-field">
-                    <input type="text" required>
+                <div class="input-field" >
+                    <input type="text" id="account-email-text" required>
                     <label>Enter your email</label>
                 </div>
-                <div class="input-field">
-                    <input type="text" required>
+                <div class="input-field" >
+                    <input type="text" id="account-phone-text" required>
                     <label>Enter your phone number</label>
                 </div>
                 <div class="input-field">
-                    <input type="password" required>
+                    <input type="password" id="account-password-text" required>
                     <label>Enter your password</label>
                 </div>
                 <div class="input-field">
-                    <input type="password" required>
+                    <input type="password" id="account-confirm-password-text" required>
                     <label>Confirm your password</label>
                 </div>
-                <button type="submit" class="log-btn" id="create-btn">Sing In</button>
+                <button type="submit" class="log-btn" id="create-account-btn">Sing In</button>
+                <div class="register">
+                    <p>All rady have an account?</p>
+                    <button type="button" class="login-register " id="login-page-btn" >Log In</button>
+                </div>
             </form>
         </div>
     </div>
