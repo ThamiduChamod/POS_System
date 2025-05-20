@@ -267,26 +267,33 @@ $('#cash').on('input', function () {
     $('#place-order-btn').on('click', function () {
 
         $('#cart-table tr').each(function () {
+            let infor_alert = false;
             let firstCell = $(this).find('td').eq(0).text().trim();
             let qty = parseFloat( $(this).find('td').eq(3).text().trim());
             Item_db.forEach(function (item) {
                 if (item.id === firstCell){
                     item.QTY -=qty;
-
+                    console.log(item.QTY+'huuuuu');
                     if (item.QTY === 0){
                         console.log(item.QTY);
+                        infor_alert = true;
 
 
                     }
 
                 }
             });
+
             clear();
             $('#cart-table-tbody').empty();
             getAllItemId();
             loadItemData($('#itemIds').val());
-            done_alert();
-            infor();
+            if (infor_alert){
+                infor();
+                done_alert();
+            }else {
+                done_alert();
+            }
 
         });
     });
@@ -294,6 +301,8 @@ $('#cash').on('input', function () {
     function infor() {
         Swal.fire({
             title: "This Product Is Out Of Stock Just Now",
+            timer: 1000,
+            timerProgressBar: true,
             showClass: {
                 popup: `
                                   animate__animated
@@ -309,6 +318,7 @@ $('#cash').on('input', function () {
                                 `
             }
         });
+
 
     }
 
