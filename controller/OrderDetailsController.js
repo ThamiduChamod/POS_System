@@ -289,8 +289,8 @@ $('#cash').on('input', function () {
             getAllItemId();
             loadItemData($('#itemIds').val());
             if (infor_alert){
-                infor();
                 done_alert();
+                infor();
             }else {
                 done_alert();
             }
